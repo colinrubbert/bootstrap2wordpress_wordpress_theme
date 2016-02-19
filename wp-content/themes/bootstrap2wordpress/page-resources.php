@@ -2,19 +2,27 @@
 /*
   Template Name: Resources Page
 */
+get_header();
 
- ?>
+$thumbnail_url        = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );
 
- <!-- Feature Image Hero -->
+?>
 
- <section class="feature-image feature-image-default" data-type="background" data-speed="2">
-   <h1 class="page-title">Resources</h1>
+  <!-- Feature Image Hero -->
 
- </section> <!-- feature-image -->
+  <?php if( has_post_thumbnail() ) { ?>
+    <section class="feature-image" style="background: url('<?php echo $thumbnail_url; ?>') no-repeat; background-size: cover;" data-type="background" data-speed="2">
+     <h1 class="page-title"><?php the_title(); ?></h1>
+  <?php } else { ?>
+    <section class="feature-image feature-image-default" data-type="background" data-speed="2">
+     <h1 class="page-title"><?php the_title(); ?></h1>
+  <?php } ?>
 
- <!-- Main Content -->
+  </section> <!-- feature-image -->
 
- <div class="container">
+  <!-- Main Content -->
+
+  <div class="container">
    <div class="row" id="primary">
 
      <div id="content" class="col-sm-12">
@@ -75,4 +83,8 @@
      </div><!-- content -->
 
    </div><!-- row -->
- </div><!-- container -->
+  </div><!-- container -->
+
+<?php
+get_footer();
+?>
