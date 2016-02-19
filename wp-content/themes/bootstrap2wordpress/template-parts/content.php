@@ -43,7 +43,13 @@
 		</div><!-- post-image -->
 	<?php } ?>
 
-	<div class="post-excerpt">
-		<?php the_excerpt(); ?>
-	</div><!-- post-excerpt -->
+	<?php
+		if ( is_single() ) {
+		echo '<div class="post-body">';
+		the_content();
+		} else {
+		echo '<div class="post-excerpt">';
+		the_excerpt();
+		} ?>
+	</div><!-- post-excerpt|body -->
 </article><!-- #post-## -->
