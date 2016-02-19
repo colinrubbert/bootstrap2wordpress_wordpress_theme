@@ -22,7 +22,7 @@
     <!-- Font Awesome Icons -->
     <link href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:200,400,700' rel='stylesheet' type='text/css'>
 
 		<?php wp_head(); ?>
 	</head>
